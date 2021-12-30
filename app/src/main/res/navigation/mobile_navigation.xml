@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.chatapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_allAuthenticatedUser"
+            app:destination="@id/allAuthenticatedUser" />
+        <action
+            android:id="@+id/action_nav_home_to_updateProfile"
+            app:destination="@id/updateProfile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.chatapp.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/signup"
+        android:name="com.example.chatapp.Signup"
+        android:label="design_navigation_item"
+        tools:layout="@layout/design_navigation_item" />
+    <activity
+        android:id="@+id/profile"
+        android:name="com.example.chatapp.Profile"
+        android:label="material_clockface_view"
+        tools:layout="@layout/material_clockface_view" />
+    <fragment
+        android:id="@+id/allAuthenticatedUser"
+        android:name="com.example.chatapp.ui.home.AllAuthenticatedUser"
+        android:label="All User"
+        tools:layout="@layout/fragment_all_authenticated_user" >
+        <action
+            android:id="@+id/action_allAuthenticatedUser_to_chatRoom"
+            app:destination="@id/chatRoom"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatRoom"
+        android:name="com.example.chatapp.ui.home.ChatRoom"
+        android:label="ChatRoom"
+        tools:layout="@layout/fragment_chat_room" />
+    <fragment
+        android:id="@+id/updateProfile"
+        android:name="com.example.chatapp.ui.home.UpdateProfile"
+        android:label="Update Profile"
+        tools:layout="@layout/fragment_update_profile" />
+</navigation>
